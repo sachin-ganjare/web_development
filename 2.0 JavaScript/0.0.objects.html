@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+</head>
+<body>
+    <script>
+        // Objects in JavaScript
+        var Person = {name:"mike", age:33, hairColor:"brown"};
+        document.write(Person.name);
+
+        Person['name'] = "newName"; //note the quotation marks.
+        document.write(Person.name);
+
+        // Array of Objects
+        var cars = [
+            {
+                make:"val1",
+                mode:"manual",
+                year:"1999"
+            },
+            {
+                make:"val2",
+                mode:"auto",
+                year:"2029"
+            },
+            {
+                make:"val3",
+                mode:"auto",
+                year:"2025"
+            }
+        ]
+
+        document.write(cars[1].mode);
+    </script>
+</body>
+</html>

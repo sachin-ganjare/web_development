@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery + AJAX (All in One)</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+        }
+
+        button {
+            margin: 5px 0;
+        }
+
+        .box {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>jQuery + AJAX</h1>
+
+    <h3>1: jQuery .load()</h3>
+    <button id="loadBtn">Load HTML</button>
+    <div id="loadResult" class="box">Waiting...</div>
+
+    <h3>2: jQuery $.get()</h3>
+    <button id="getBtn">Get Data</button>
+    <div id="getResult" class="box">Waiting...</div>
+
+    <h3>3: jQuery $.post()</h3>
+    <button id="postBtn">Send Data</button>
+    <div id="postResult" class="box">Waiting...</div>
+
+    <script>
+
+    // Syntax:
+    //     $(selector).load(URL,data,callback);
+    //     $.get(URL, callback);
+    //     $.post(URL, data, callback);
+
+    $(document).ready(function () {
+
+            $("#loadBtn").click(function () {
+                $("#loadResult").load("https://jsonplaceholder.typicode.com/posts/1");
+            });
+
+            $("#getBtn").click(function () {
+                $.get("https://jsonplaceholder.typicode.com/users/1", function (data) {
+                    $("#getResult").html(
+                        "<b>Name:</b> " + data.name + "<br>" +
+                        "<b>Email:</b> " + data.email
+                    );
+                });
+            });
+
+            $("#postBtn").click(function () {
+                $.post("https://jsonplaceholder.typicode.com/posts", {
+                    title: "Hello",
+                    body: "This is a POST request",
+                    userId: 1
+                }, function (data) {
+                    $("#postResult").html(
+                        "<b>POST Successful!</b><br>" +
+                        "ID: " + data.id + "<br>" +
+                        "Title: " + data.title
+                    );
+                });
+            });
+
+        });
+    </script>
+
+</body>
+
+</html>

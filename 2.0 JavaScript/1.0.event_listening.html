@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Listener</title>
+</head>
+
+<body>
+
+    Event Listeners<br><br><br>
+    <a id="myBtn">Click Me!</a> <br><br>
+    <h1 id="myRes">.</h1>
+
+    <script>
+
+        document.getElementById("myBtn").addEventListener("click", function () {
+            document.getElementById("myRes").innerText = "Element is clicked!";
+        });
+
+    </script>
+
+</body>
+
+</html>

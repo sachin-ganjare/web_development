@@ -1,0 +1,150 @@
+<!-- index.ejs -->
+<!-- Demo EJS template showing a full page layout -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title><%= title || 'EJS Demo Page' %></title>
+
+  <!-- Basic demo styles (normally in a CSS file) -->
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      background: #f5f7fa;
+      color: #222;
+    }
+    header, footer {
+      background: #111827;
+      color: #fff;
+    }
+    header a, footer a { color: #93c5fd; text-decoration: none; }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1.5rem;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      gap: 1rem;
+    }
+    main {
+      background: #fff;
+      margin: 2rem auto;
+      border-radius: 8px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    }
+    article {
+      padding: 2rem;
+    }
+    article h2 { margin-top: 0; }
+    aside {
+      background: #f1f5f9;
+      padding: 1.5rem;
+      border-top: 1px solid #e5e7eb;
+    }
+    footer {
+      margin-top: 3rem;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===================== -->
+  <!-- Header -->
+  <!-- ===================== -->
+  <header>
+    <div class="container">
+      <h1><%= siteName || 'Demo Website' %></h1>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Articles</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===================== -->
+  <!-- Main Content -->
+  <!-- ===================== -->
+  <main class="container">
+
+    <!-- Article -->
+    <article>
+      <header>
+        <h2><%= article.title %></h2>
+        <p>
+          Published on
+          <time datetime="<%= article.dateISO %>">
+            <%= article.dateHuman %>
+          </time>
+          · by <%= article.author %>
+        </p>
+      </header>
+
+      <p>
+        EJS is a simple templating language that lets you embed JavaScript
+        directly into your HTML using familiar syntax.
+      </p>
+
+      <p>
+        This demo shows a complete page structure including header, navigation,
+        article content, sidebar, and footer.
+      </p>
+
+      <h3>Key Features</h3>
+      <ul>
+        <% article.features.forEach(feature => { %>
+          <li><%= feature %></li>
+        <% }) %>
+      </ul>
+
+      <h3>Example Code</h3>
+      <pre><code>&lt;h1&gt;Hello from EJS&lt;/h1&gt;</code></pre>
+    </article>
+
+    <!-- Sidebar / Aside -->
+    <aside>
+      <h3>Related Links</h3>
+      <ul>
+        <li><a href="#">EJS Documentation</a></li>
+        <li><a href="#">Express.js Guide</a></li>
+        <li><a href="#">Template Best Practices</a></li>
+      </ul>
+
+      <h3>Newsletter</h3>
+      <form action="#" method="post">
+        <label for="email">Email address</label><br />
+        <input id="email" type="email" name="email" placeholder="you@example.com" />
+        <br />
+        <button type="submit">Subscribe</button>
+      </form>
+    </aside>
+
+  </main>
+
+  <!-- ===================== -->
+  <!-- Footer -->
+  <!-- ===================== -->
+  <footer>
+    <div class="container">
+      <p>© <%= new Date().getFullYear() %> <%= siteName || 'Demo Website' %>. All rights reserved.</p>
+      <p>
+        Built with <a href="https://ejs.co">EJS</a> ·
+        <a href="#">Privacy Policy</a>
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>

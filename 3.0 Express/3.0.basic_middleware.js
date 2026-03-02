@@ -1,0 +1,19 @@
+// express js - use of middleware
+
+const express = require("express");
+const app = express();
+
+const logger = (req, res, next) => {
+    console.log(`${req.method} ${req.url}`);
+    next();
+};
+
+app.use(logger);
+
+app.get("/", (req, res) => {
+    res.send("Hello World!");
+});
+
+app.listen(3000, () => {
+    console.log("server is listening: http://localhost:3000");
+});

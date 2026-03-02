@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Ready Function</title>
+    <script src="./jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+    <!-- Syntax: $(selector).action() -->
+    <h1>Hello world!</h1>
+    <h2>this is hello world 2!</h2>
+    <ul>
+        <li>This is li 1</li>
+        <li>This is li 2</li>
+        <li>This is li 3</li>
+    </ul>
+
+    <button onclick="myFunc()">Click Me!</button>
+    <script>
+       // it is a good practice to use document ready func
+       // it  prevents jquery code from runing to early.
+       $(document).ready(function(){
+        // code here.
+        
+       })
+
+    </script>
+</body>
+
+</html>

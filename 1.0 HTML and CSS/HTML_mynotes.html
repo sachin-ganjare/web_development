@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Notes</title>
+</head>
+<style>
+    * {
+        font-family: 'arial';
+    }
+
+    body {
+        background-color: antiquewhite;
+    }
+
+    h2 {
+        color: rgb(0, 0, 0);
+        font-size: 28px;
+        border: 2px solid black;
+        border-radius: 5px;
+        background-color: rgba(0, 0, 0, 0.24);
+        padding: 5px;
+        margin: 0;
+    }
+
+    div {
+        /* position: absolute;
+    top:50%;
+    left:50%; */
+        margin-right: 50%;
+        padding: 1%;
+        border: 2px solid rgba(0, 0, 0, 0.5);
+        border-radius: 5px;
+    }
+
+    #loadNote {
+        cursor: pointer;
+        background-color: rgb(68, 68, 67);
+        color: antiquewhite;
+        font-size: 18px;
+        margin: 5px;
+        float: left;
+    }
+
+    #deleteNote {
+        cursor: pointer;
+        background-color: rgb(160, 32, 20);
+        color: antiquewhite;
+        font-size: 18px;
+        margin: 5px;
+        float:unset;
+        margin-right: 50%;
+    }
+
+     #saveNote {
+        cursor: pointer;
+        background-color: rgb(160, 160, 20);
+        color: antiquewhite;
+        font-size: 18px;
+        margin: 5px;
+        float: right;
+
+    }
+
+    input {
+        display: block;
+        background-color: rgb(0, 0, 0);
+        color: antiquewhite;
+        border: 1px solid rgb(133, 5, 5);
+        margin: 2%;
+        width: 80%;
+        border-radius: 5px;
+        padding: 1%;
+        font-size: x-large;
+    }
+
+    button:active {
+        box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
+        transform: scale(0.93);
+        /* Moving button 4px to y-axis */
+    }
+
+    input::placeholder {
+        color: rgb(255, 255, 255);
+    }
+</style>
+
+<body>
+    <div>
+        <h2>My Notes Application</h2>
+        <hr>
+        <input type="text" id="notes"  placeholder="Your Notes Here...." contenteditable="true">
+        <hr>
+        <button onclick="loadNote()" id="loadNote">Load Note</button>
+        <button onclick="deleteNote()" id="deleteNote">Delete Note</button> 
+        <button onclick="saveNote()" id="saveNote">Save Note</button> <br><br>
+        <footer id="warning">Copy &copy; 2024 MyTechsu Technology</footer>
+  
+    </div>
+</body>
+<script>
+    function loadNote(){
+        var notes = document.getElementById('notes');
+        if(localStorage.notes1){
+            notes.value = localStorage.notes1;
+        } else {
+            notes.value ='Sorry, no notes found!';
+        }
+    }
+    function saveNote(){
+        var notes = document.getElementById('notes');
+        var warning = document.getElementById('warning');
+        if (localStorage!=null){
+            localStorage.setItem('notes1',notes.value);
+            warning.textContent="Your notes has been Saved!";
+        }
+    }
+
+    function deleteNote(){
+        var notes = document.getElementById('notes');
+        var warning = document.getElementById('warning');
+        localStorage.clear();
+        warning.textContent="Your notes are removed!";
+        
+    }
+</script>
+
+</html>

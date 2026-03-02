@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animations and Transitions</title>
+</head>
+<style>
+    #container {
+        background-color: aquamarine;
+        width:300px;
+        border:2px solid black;
+        height: 300px;
+        transition:width 4s !important;
+        transition:transform 2s;
+        /* animation-name:colorChange;
+        animation-duration:5s;
+        animation-timing-function: ease-in;
+        animation-delay: 2s;
+        animation-iteration-count: 5; */
+    }
+    #container:hover{
+        transform: scale(1.1);
+        width:500px;
+        animation:colorChange2 2s 1;
+    }
+    /* @keyframes colorChange{
+        0%{
+            background-color: aquamarine;
+        }
+        25%{
+            background-color:rgb(59, 196, 89);
+        }
+        50%{
+            background-color:rgb(196, 222, 33);
+        }
+        75%{
+            background-color:rgb(253, 129, 21);
+        }
+        100%{
+            background-color:rgb(14, 74, 165);
+
+        }
+    } */
+
+    @keyframes colorChange2{
+        0%{
+            background-color: aquamarine;
+        }
+        50%{
+            background-color:rgb(221, 255, 0);
+        }
+        100%{
+            background-color:aquamarine;
+
+        }
+    }
+    
+</style>
+<body>
+    <h2>Animations and Transitions</h2>
+    <div id="container"> animate->colorChange<br>onhover->transition->translate->translate 300px <br></div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>session Storage</title>
+    <script>
+        function saveMessage(){
+            var msg= document.getElementById("message");
+            var message = msg.value;
+            sessionStorage.setItem('message',message);
+            document.getElementsByTagName('p')[0].innerHTML = 'Value Saved!';
+        }
+        function getMessage(){
+            document.getElementsByTagName('p')[0].innerHTML = sessionStorage.getItem('message');
+        }
+    </script>
+</head>
+<body>
+    <h1>session Storage</h1>
+    <label for="message">Enter Your Message to Save it in session Storage:</label>
+    <input type="text" id="message" name="message"/>
+    <button onclick="saveMessage()">Save!</button>
+    <button onclick="getMessage()">Get!</button>
+    
+<br>
+    <p>Here goes Process!</p>
+</body>
+</html>

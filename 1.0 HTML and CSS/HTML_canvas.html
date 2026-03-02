@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas and SVG</title>
+    <style>
+        #container{
+            display:flex;
+            flex-wrap: wrap;
+        }
+        canvas {
+            padding:10px;
+            margin:20px;
+        }
+    </style>
+<body>
+    <h2>Canvas</h2>
+    <div id="container">
+
+     <br>
+   <p>1: Rectangle</p>
+    <canvas id="mycanvas1" width="200" height="200" style="border:1px solid black"></canvas>
+    
+
+   <p>2: Circle</p>
+    <canvas id="mycanvas2" width="200" height="200" style="border:1px solid black"></canvas>
+    
+
+   <p>3: Text</p>
+    <canvas id="mycanvas3" width="200" height="200" style="border:1px solid black"></canvas>
+    
+
+    <p>4: Gradient</p>
+    <canvas id="mycanvas4" width="200" height="200" style="border:1px solid black"></canvas>
+    
+    <p>5: Line</p>
+    <canvas id="mycanvas5" width="200" height="200" style="border:1px solid black"></canvas>
+    
+</div>
+</body>
+<script>
+    var canvas1=document.getElementById('mycanvas1');
+    var canvas2=document.getElementById('mycanvas2');
+    var canvas3=document.getElementById('mycanvas3');
+    var canvas4=document.getElementById('mycanvas4');
+    var canvas5=document.getElementById('mycanvas5');
+
+    var ctx1=canvas1.getContext('2d');
+    var ctx2=canvas2.getContext('2d');
+    var ctx3=canvas3.getContext('2d');
+    var ctx4=canvas4.getContext('2d');
+    var ctx5=canvas5.getContext('2d');
+
+    //rectangle
+    ctx1.fillStyle='skyblue';
+    ctx1.fillRect(0,0,150,150);
+   
+
+    //circle
+    ctx2.beginPath();
+    ctx2.arc(150,150,40,0,2*Math.PI);
+    ctx2.fillStyle='red';
+    ctx2.fill();
+    ctx2.lineWidth=4;
+    ctx2.strokeStyle='blue';
+    ctx2.stroke();
+
+    //text
+    ctx3.font='150px calibri';
+    ctx3.strokeStyle='red';
+    ctx3.strokeText('Hello',0,150);
+
+    //gradient
+    var grd= ctx4.createLinearGradient(0,0,200,200);
+    grd.addColorStop(0,'green');
+    grd.addColorStop(0.5,'cyan');
+    grd.addColorStop(1,'green');
+    ctx4.fillStyle = grd;
+    ctx4.fillRect(0,0,200,200);
+   
+    //line
+    ctx5.moveTo(0,0);
+    ctx5.lineTo(200,200);
+    ctx5.strokeStyle='blue';
+    ctx5.stroke();
+
+
+</script>
+</html>

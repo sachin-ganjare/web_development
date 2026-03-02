@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown</title>
+</head>
+<style>
+
+.menu{
+	width:600px;
+	position:absolute;
+}
+
+.menu ul{
+	list-style: none;
+}
+
+.menu ul li{
+	display:block;
+	border: 1px solid #b7b7b7;
+	float:left;
+	height:40px;
+	line-height:40px;
+	overflow:hidden;
+	padding-left:20px;
+	position:absolute;
+	width:100px;
+	z-index:1000;
+}
+
+.menu ul li#b{
+	margin-left:100px;
+}
+
+.menu ul li#c{
+	margin-left:200px;
+}
+
+.menu ul li a{
+	text-decoration: none;
+}
+
+
+.menu ul li div a:hover{
+	color: darkred;
+}
+
+.menu ul li div hr{
+	border:none;
+	border-top:1px dashed indianred;
+	margin:5px 0;
+	width:95%;
+}
+
+.menu ul li:hover{
+	display:block;
+	height:155px;
+}
+
+</style>
+<body>
+    <nav class="menu">
+		<ul>
+			<li id="a">
+				<a href="#a">About us</a>
+				<div>
+					<hr>
+					<a href="#">Team</a>
+					<hr>
+					<a href="#">Values</a>
+				</div>
+			</li>
+			<li id="b">
+				<a href="#b">Contact us</a>
+				<div>
+					<hr>
+					<a href="#">Email</a>
+					<hr>
+					<a href="#">Phone</a>
+				</div>
+			</li>
+		</ul>
+	</nav>
+</body>
+</html>

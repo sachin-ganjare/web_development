@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag and Drop API</title>
+    <style>
+        .container{
+            width: 500px;
+            height: 300px;
+            border: 2px solid #ccc;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <textarea name="sample" id="sample" disabled>Drag and drop into the box.</textarea>
+     <div class="container"></div>
+    
+     <script>
+        document.getElementById("sample").addEventListener("dragstart", function(e){
+            e.dataTransfer.setData("text/plain", e.target.id);
+        });
+        document.querySelector(".container").addEventListener("dragover", function(e){
+            e.preventDefault();
+        });
+        document.querySelector(".container").addEventListener("drop", function(e){
+            e.preventDefault();
+            let data = e.dataTransfer.getData("text/plain");
+            let element = document.getElementById(data);
+            element.disabled = true;
+            this.appendChild(element);
+        });
+     </script>
+</body>
+</html>

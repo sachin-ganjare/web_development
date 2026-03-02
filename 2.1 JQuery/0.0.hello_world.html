@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello world!</title>
+    <script src="./jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+    <!-- Syntax: $(selector).action() -->
+    <h1>Hello world!</h1>
+    <h2>this is hello world 2!</h2>
+    <ul>
+        <li>This is li 1</li>
+        <li>This is li 2</li>
+        <li>This is li 3</li>
+    </ul>
+
+    <button onclick="myFunc()">Click Me!</button>
+    <script>
+        $('h1').text('He he!');
+        $('h2').hide();
+
+        function myFunc() {
+            $('ul li:first-child').slideUp();
+        }
+
+        // some simple language for the rest can also be used: like 
+        // :odd :even :button a[href] for the rest.
+
+    </script>
+</body>
+
+</html>

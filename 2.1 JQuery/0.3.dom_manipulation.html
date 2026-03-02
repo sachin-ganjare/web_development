@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery DOM Manipulation</title>
+    <script src="./jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+    <h1>I am first</h1>
+    <h2>I am second</h2>
+    <button> Click me!</button>
+    <script>
+            /*
+            html() val() attr() append() preprend() after() before()
+            remove() empty() addClass() removeClass() toggleClass()
+            css() etc
+            */
+           $('button').click(
+            function(){
+            $('h1').prepend($('h2'));
+            }
+           );
+    </script>
+
+</body>
+</html>

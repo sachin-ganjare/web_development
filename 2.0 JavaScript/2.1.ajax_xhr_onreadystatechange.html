@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX</title>
+</head>
+<body>
+    <h1>quick brown fox, Jumps over the lazy dog!</h1>
+    <br>
+    <p id="mainTxt">Change this text</p>
+    <br>
+    <button onclick="changeText()">Click Here!</button>
+    
+    <script>
+    function changeText(){
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if(xhr.readyState == 4 && xhr.status==200) {
+                document.getElementById('mainTxt').innerHTML = xhr.responseText
+            }
+        }
+
+        xhr.open("GET","demo.txt",true);
+        xhr.send();
+    }    
+    </script>
+</body>
+</html>

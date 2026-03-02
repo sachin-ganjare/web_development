@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geolocation API</title>
+    
+</head>
+
+<body>
+    <script>
+        function getLocation(){
+        if(navigator.geolocation){
+            navigator.geolocation.getCurrentPosition((data)=>{
+                document.getElementsByTagName("h1")[0].innerText = "LAT:" + `${data.coords.latitude}` + " LON: " + `${data.coords.longitude}`; 
+                document.getElementById("otherdata").innerText = "Other Data: " + JSON.stringify(data);
+            });
+        }}
+
+    </script>
+
+    <br>
+    <h1>Know your location, Click the button below:</h1>
+    <hr>
+    <br>
+    <button onclick="getLocation()">
+        Get Location
+    </button>
+
+    <p id="otherdata"></p>
+</body>
+
+</html>

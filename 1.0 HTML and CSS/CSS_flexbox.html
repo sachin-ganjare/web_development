@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flexbox</title>
+</head>
+<style>
+    #container1,
+    #container2,
+    #container3,
+    #container4,
+    #container5 {
+        background-color: aquamarine;
+        width: 300px;
+        border: 2px solid black;
+        height: 300px;
+        margin: 2px;
+    }
+
+    #main {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        /* flex-grow: inherit; 
+            flex-shrink: 1;
+        */
+    }
+</style>
+
+<body>
+    <div id="main">
+        <div id="container1"> flexbox1<br></div>
+        <div id="container2"> flexbox2<br></div>
+        <div id="container3"> flexbox3<br></div>
+        <div id="container4"> flexbox4<br></div>
+        <div id="container5"> flexbox5<br></div>
+    </div>
+</body>
+
+</html>

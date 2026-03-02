@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage</title>
+    <script>
+        function saveMessage(){
+            var msg = document.getElementById("message").value;
+            localStorage.setItem('message', msg);
+            document.getElementsByTagName('p')[0].innerHTML = 'Value Saved!';
+        }
+        function getMessage(){
+            var storedMessage = localStorage.getItem('message');
+            if (storedMessage) {
+                document.getElementsByTagName('p')[0].innerHTML = storedMessage;
+            } else {
+                document.getElementsByTagName('p')[0].innerHTML = 'No message found!';
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Local Storage</h1>
+    <label for="message">Enter Your Message to Save it in Local Storage:</label>
+    <input type="text" id="message" name="message"/>
+    <button onclick="saveMessage()">Save!</button>
+    <button onclick="getMessage()">Get!</button>
+    <br>
+    <p>Here goes Process!</p>
+</body>
+</html>
